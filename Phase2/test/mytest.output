@@ -1,0 +1,482 @@
+ident -> IDENT main
+declarations -> epsilon
+ident -> IDENT n
+identifiers -> ident
+declaration -> identifiers COLON INTEGER
+ident -> IDENT i
+ident -> IDENT j
+ident -> IDENT k
+identifiers -> ident
+identifiers -> ident COMMA identifiers
+identifiers -> ident COMMA identifiers
+declaration -> identifiers COLON INTEGER
+ident -> IDENT t
+identifiers -> ident
+declaration -> identifiers COLON ARRAY L_SQUARE_BRACKET NUMBER R_SQUARE_BRACKET OF INTEGER
+declarations -> epsilon
+declarations -> declaration SEMICOLON declarations
+declarations -> declaration SEMICOLON declarations
+declarations -> declaration SEMICOLON declarations
+ident -> IDENT i
+var -> ident
+ident -> IDENT j
+var -> ident
+varLoop -> epsilon
+varLoop ->  COMMA var varLoop
+sread -> READ var varLoop
+statements -> sread
+ident -> IDENT k
+var -> ident
+term -> NUMBER
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+svar -> var ASSIGN expression
+statements -> svar
+ident -> IDENT n
+var -> ident
+term -> NUMBER
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+svar -> var ASSIGN expression
+statements -> svar
+ident -> IDENT t
+ident -> IDENT k
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+var -> ident L_SQSUARE_BRACKET expression R_SQUARE_BRACKET
+ident -> IDENT k
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+svar -> var ASSIGN expression
+statements -> svar
+ident -> IDENT k
+var -> ident
+ident -> IDENT k
+var -> ident
+term -> var
+multi_expr -> term
+term -> NUMBER
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+addSubExpr -> ADD expression
+expression -> multi_exp addSubExpr
+svar -> var ASSIGN expression
+statements -> svar
+ident -> IDENT k
+var -> ident
+term -> var
+term -> NUMBER
+multi_expr -> term
+multi_expr -> term MOD multi_expr
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+comp -> EQ
+term -> NUMBER
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+ece -> expression comp expression
+relation_expr -> ece
+relation_exprs -> relation_expr
+bool_expr -> relation_exprs
+scontinue -> CONTINUE
+statements -> scontinue
+statements -> statement SEMICOLON
+sif -> IF bool_expr THEN statements ENDIF
+statements -> sif
+ident -> IDENT t
+ident -> IDENT k
+var -> ident
+term -> var
+multi_expr -> term
+term -> NUMBER
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+addSubExpr -> SUB expression
+expression -> multi_exp addSubExpr
+var -> ident L_SQSUARE_BRACKET expression R_SQUARE_BRACKET
+varLoop -> epsilon
+swrite -> WRITE var varLoop
+statements -> swrite
+statements -> statement SEMICOLON
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+ident -> IDENT k
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+comp -> LT
+ident -> IDENT n
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+ece -> expression comp expression
+relation_expr -> ece
+relation_exprs -> relation_expr
+bool_expr -> relation_exprs
+sdo ->  DO BEGINLOOP statements ENDLOOP WHILE bool_expr
+statements -> sdo
+ident -> IDENT i
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+comp -> LT
+ident -> IDENT j
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+ece -> expression comp expression
+relation_expr -> ece
+relation_exprs -> relation_expr
+ident -> IDENT j
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+comp -> LT
+ident -> IDENT n
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+ece -> expression comp expression
+relation_expr -> ece
+relation_exprs -> relation_expres AND relation_expr
+ident -> IDENT i
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+comp -> GTE
+term -> NUMBER
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+ece -> expression comp expression
+relation_expr -> ece
+relation_exprs -> relation_expres AND relation_expr
+bool_expr -> relation_exprs
+ident -> IDENT t
+ident -> IDENT i
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+var -> ident L_SQSUARE_BRACKET expression R_SQUARE_BRACKET
+ident -> IDENT i
+var -> ident
+term -> var
+term -> NUMBER
+multi_expr -> term
+multi_expr -> term MULT multi_expr
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+svar -> var ASSIGN expression
+statements -> svar
+ident -> IDENT t
+ident -> IDENT j
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+var -> ident L_SQSUARE_BRACKET expression R_SQUARE_BRACKET
+ident -> IDENT j
+var -> ident
+term -> var
+term -> NUMBER
+multi_expr -> term
+multi_expr -> term MULT multi_expr
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+svar -> var ASSIGN expression
+statements -> svar
+ident -> IDENT k
+var -> ident
+ident -> IDENT t
+ident -> IDENT i
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+var -> ident L_SQSUARE_BRACKET expression R_SQUARE_BRACKET
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+svar -> var ASSIGN expression
+statements -> svar
+ident -> IDENT t
+ident -> IDENT i
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+var -> ident L_SQSUARE_BRACKET expression R_SQUARE_BRACKET
+ident -> IDENT t
+ident -> IDENT j
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+var -> ident L_SQSUARE_BRACKET expression R_SQUARE_BRACKET
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+svar -> var ASSIGN expression
+statements -> svar
+ident -> IDENT t
+ident -> IDENT j
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+var -> ident L_SQSUARE_BRACKET expression R_SQUARE_BRACKET
+ident -> IDENT k
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+svar -> var ASSIGN expression
+statements -> svar
+statements -> statement SEMICOLON
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+ident -> IDENT i
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+comp -> GTE
+ident -> IDENT j
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+ece -> expression comp expression
+relation_expr -> ece
+relation_exprs -> relation_expr
+bool_expr -> relation_exprs
+relation_expr -> FALSE
+relation_exprs -> relation_expr
+bool_expr -> bool_expr OR relation_exprs
+ident -> IDENT k
+var -> ident
+term -> NUMBER
+multi_expr -> term
+ident -> IDENT i
+var -> ident
+term -> var
+multi_expr -> term
+ident -> IDENT j
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+addSubExpr -> SUB expression
+expression -> multi_exp addSubExpr
+addSubExpr -> ADD expression
+expression -> multi_exp addSubExpr
+term -> LPAREN expression RPAREN
+term -> NUMBER
+multi_expr -> term
+multi_expr -> term MOD multi_expr
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+svar -> var ASSIGN expression
+statements -> svar
+ident -> IDENT i
+var -> ident
+ident -> IDENT i
+var -> ident
+term -> var
+multi_expr -> term
+term -> NUMBER
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+addSubExpr -> SUB expression
+expression -> multi_exp addSubExpr
+svar -> var ASSIGN expression
+statements -> svar
+ident -> IDENT k
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+comp -> GT
+term -> NUMBER
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+ece -> expression comp expression
+relation_expr -> ece
+relation_exprs -> relation_expr
+bool_expr -> relation_exprs
+scontinue -> CONTINUE
+statements -> scontinue
+statements -> statement SEMICOLON
+sif -> IF bool_expr THEN statements ENDIF
+statements -> sif
+ident -> IDENT k
+var -> ident
+varLoop -> epsilon
+swrite -> WRITE var varLoop
+statements -> swrite
+statements -> statement SEMICOLON
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+swhile -> WHILE bool_expr BEGINLOOP statements ENDLOOP
+statements -> swhile
+statements -> statement SEMICOLON
+sif -> IF bool_expr THEN statements ELSE statements ENDIF
+statements -> sif
+ident -> IDENT i
+var -> ident
+ident -> IDENT j
+var -> ident
+ident -> IDENT k
+var -> ident
+varLoop -> epsilon
+varLoop ->  COMMA var varLoop
+varLoop ->  COMMA var varLoop
+swrite -> WRITE var varLoop
+statements -> swrite
+ident -> IDENT i
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+comp -> LT
+ident -> IDENT n
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+ece -> expression comp expression
+relation_expr -> ece
+relation_exprs -> relation_expr
+ident -> IDENT i
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+comp -> GTE
+term -> NUMBER
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+ece -> expression comp expression
+relation_expr -> ece
+relation_exprs -> relation_expres AND relation_expr
+bool_expr -> relation_exprs
+ident -> IDENT t
+ident -> IDENT i
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+var -> ident L_SQSUARE_BRACKET expression R_SQUARE_BRACKET
+varLoop -> epsilon
+swrite -> WRITE var varLoop
+statements -> swrite
+statements -> statement SEMICOLON
+sif -> IF bool_expr THEN statements ENDIF
+statements -> sif
+ident -> IDENT j
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+comp -> LT
+ident -> IDENT n
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+ece -> expression comp expression
+relation_expr -> ece
+relation_exprs -> relation_expr
+ident -> IDENT j
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+comp -> GTE
+term -> NUMBER
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+ece -> expression comp expression
+relation_expr -> ece
+relation_exprs -> relation_expres AND relation_expr
+bool_expr -> relation_exprs
+ident -> IDENT t
+ident -> IDENT j
+var -> ident
+term -> var
+multi_expr -> term
+addSubExpr -> epsilon
+expression -> multi_exp addSubExpr
+var -> ident L_SQSUARE_BRACKET expression R_SQUARE_BRACKET
+varLoop -> epsilon
+swrite -> WRITE var varLoop
+statements -> swrite
+statements -> statement SEMICOLON
+sif -> IF bool_expr THEN statements ENDIF
+statements -> sif
+statements -> statement SEMICOLON
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+function -> FUNCTION ident SEMICOLON BEGIN_PARAMS declarations END_PARAMS BEGIN_LOCALS declarations END_LOCALS BEGIN_BODY statements END_BODY
+functions -> epsilon
+functions -> function functions
+program -> functions
